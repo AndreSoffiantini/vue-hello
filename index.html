@@ -13,6 +13,10 @@
     <div id="app">
         <h1>{{ message }}</h1>
         <img v-bind:src="image" alt="">
+        <br>
+        <button style="margin: 2rem 0" @click="generateImages">Click to generate an image</button>
+        <br>
+        <img v-bind:src="random_image" alt="">
     </div>
 
 
