@@ -4,14 +4,25 @@ const app = new Vue({
 
     data: {
         message: "Test VueJS",
-        image: "https://picsum.photos/400?random=1",
-        random_image: ""
+        image: "https://picsum.photos/200?random=1",
+        class_images: "images",
+        random_index: 1
     },
 
     methods: {
+
         generateImages() {
 
-            this.random_image = "https://picsum.photos/400?random=2";
+            //console.log(typeof(this.class_images));
+            const images = document.querySelector("." + this.class_images);
+
+            this.random_index++;
+            //console.log(this.random_index);
+
+            const randomImage = document.createElement("img");
+            randomImage.src = `https://picsum.photos/200?random=${this.random_index}`;
+
+            images.appendChild(randomImage);
 
         }
     }
